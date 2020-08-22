@@ -1,12 +1,12 @@
 ---
 
-domain: example.com
-host_id: es-prod # country initials (eg uk, es, de) and environment (default is prod)
+domain: picnichillpantry.com
+host_id: php-prod # country initials (eg uk, es, de) and environment (default is prod)
 rails_env: production
 
-admin_email: admin@example.com
+admin_email: jason@picnichillpantry.com
 
-mail_domain: example.com
+mail_domain: picnichillpantry.com
 
 # Optional list of subdomains to register in letsencrypt certificate
 # Defaults to {{ domain }} if list is undefined
