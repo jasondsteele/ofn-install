@@ -20,188 +20,31 @@ lexi
 travis
 
 #------------------------------------------------------------------------------
-# Australia
+# Picnic Hill Pantry
 
-[au-prod]
-openfoodnetwork.org.au ansible_host=43.239.97.238
+[php-prod]
+ec2-3-18-223-6.us-east-2.compute.amazonaws.com ansible_host=3.128.196.123
 
-[au-staging]
-staging.openfoodnetwork.org.au
+[php-staging]
 
-[au:children]
-au-prod
-au-staging
-
-#------------------------------------------------------------------------------
-# Brazil
-
-[br-prod]
-openfoodbrasil.com.br ansible_host=52.20.5.42
-
-[br-staging]
-staging.openfoodbrasil.com.br ansible_host=54.242.172.26
-
-[br:children]
-br-prod
-br-staging
-
-#------------------------------------------------------------------------------
-# Canada
-
-[ca-prod]
-openfoodnetwork.ca ansible_host=68.183.204.127
-
-[ca:children]
-ca-prod
-
-#------------------------------------------------------------------------------
-# India
-
-[in-prod]
-www.openfoodnetwork.in
-
-[in:children]
-in-prod
-
-#------------------------------------------------------------------------------
-# Italy
-
-[it-staging]
-staging.pixelwise.it
-
-[it:children]
-it-staging
-
-#------------------------------------------------------------------------------
-# UK
-
-[uk-prod]
-www.openfoodnetwork.org.uk
-
-[uk-staging]
-staging.openfoodnetwork.org.uk
-
-[uk-staging2]
-staging2.openfoodnetwork.org.uk
-
-[uk:children]
-uk-prod
-uk-staging
-uk-staging2
-
-#------------------------------------------------------------------------------
-# USA
-
-[us-prod]
-openfoodnetwork.net ansible_host=52.3.171.208
-
-[us-staging]
-
-[us:children]
-us-prod
-us-staging
-
-#------------------------------------------------------------------------------
-# Spain
-
-[es-prod]
-app.katuma.org ansible_host=116.203.60.113
-
-[es-staging]
-staging.katuma.org ansible_host=51.15.216.10
-
-[es:children]
-es-prod
-es-staging
-
-#------------------------------------------------------------------------------
-# France
-
-[fr-prod]
-www.openfoodfrance.org ansible_host=51.68.226.206
-
-[fr-staging]
-staging.openfoodfrance.org ansible_host=149.202.55.45
-
-[fr:children]
-fr-prod
-fr-staging
-
-#------------------------------------------------------------------------------
-# Germany
-
-[de-prod]
-openfoodnetwork.de ansible_host=195.201.96.103
-
-[de:children]
-de-prod
-
-#------------------------------------------------------------------------------
-# Belgium
-
-[be-prod]
-www.openfoodnetwork.be ansible_host=51.75.124.147
-
-[be:children]
-be-prod
-
-#------------------------------------------------------------------------------
-# South Africa
-
-[za-prod]
-www.openfoodnetwork.org.za
-
-[za:children]
-za-prod
-
-#------------------------------------------------------------------------------
-# Europe
-
-[europe:children]
-be-prod
-es-prod
-fr-prod
-uk-prod
-de-prod
-
-#------------------------------------------------------------------------------
-# America
-
-[america:children]
-ca-prod
-us-prod
+[php:children]
+php-prod
+php-staging
 
 #------------------------------------------------------------------------------
 # Production Servers
 
 [all-prod:children]
-europe
-america
-au-prod
+php-prod
 
 #------------------------------------------------------------------------------
 # Staging Servers
 
 [all-staging:children]
-au-staging
-uk-staging
-fr-staging
-es-staging
 
 #------------------------------------------------------------------------------
 # All
 
 [ofn_servers:children]
 local
-au
-ca
-in
-it
-uk
-us
-es
-fr
-de
-be
-za
-br
+php
